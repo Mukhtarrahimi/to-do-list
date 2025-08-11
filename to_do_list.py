@@ -16,4 +16,7 @@ root.iconphoto(False, image_icon)
 top_image = PhotoImage(file="images/topbar.png")
 Label(root, image=top_image).pack()
 
+dock_image = PhotoImage(file="images/dock.png")
+Label(root, image=dock_image).place(x=30, y=25)
+
 root.mainloop()  
