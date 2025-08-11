@@ -19,4 +19,7 @@ Label(root, image=top_image).pack()
 dock_image = PhotoImage(file="images/dock.png")
 Label(root, image=dock_image).place(x=30, y=25)
 
+note_image = PhotoImage(file="images/task.png")
+Label(root, image=note_image).place(x=30, y=25)
+
 root.mainloop()  
