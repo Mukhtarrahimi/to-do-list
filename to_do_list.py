@@ -10,13 +10,17 @@ task_list = []
 
 # function
 def openTaskFile():
-    with open("tasklist.txt", "r") as taskfile:
-        tasks = taskfile.readlines()
-    for task in tasks:
-        if task != '\n':
-            task_list.append(task)
-            list_box.insert(END, task)
-
+    try:
+        global task_list
+        with open("tasklist.txt", "r") as taskfile:
+            tasks = taskfile.readlines()
+            for task in tasks:
+                if task != '\n':
+                    task_list.append(task)
+                    list_box.insert(END, task)
+    except:
+        file = open("tasklist.txt", "w")
+        file.close()
 # Icon
 image_icon = PhotoImage(file="images/task.png")
 root.iconphoto(False, image_icon)
