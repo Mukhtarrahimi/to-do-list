@@ -9,6 +9,16 @@ root.resizable(False, False)
 task_list = []
 
 # function
+def addTask():
+    task = task_entry.get()
+    task_entry.delete(0, END)
+    
+    if task:
+        with open("tasklist.txt", "a") as taskfile:
+            taskfile.write(f"\n{task}")
+        task_list.append(task)
+        list_box.insert(END, task)
+
 def openTaskFile():
     try:
         global task_list
@@ -21,6 +31,8 @@ def openTaskFile():
     except:
         file = open("tasklist.txt", "w")
         file.close()
+        
+        
 # Icon
 image_icon = PhotoImage(file="images/task.png")
 root.iconphoto(False, image_icon)
@@ -47,7 +59,7 @@ task_entry = Entry(frame, width=18, font="arial 20", bd=0)
 task_entry.place(x=10, y=7)
 task_entry.focus()
 
-button = Button(frame, text="ADD", font="arial 20 bold", width=6, bg="#5a95ff", fg="#fff", bd=0)
+button = Button(frame, text="ADD", font="arial 20 bold", width=6, bg="#5a95ff", fg="#fff", bd=0, command=addTask)
 button.place(x=300, y=0)
 
 # listbox
