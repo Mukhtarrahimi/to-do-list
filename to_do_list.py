@@ -19,6 +19,16 @@ def addTask():
         task_list.append(task)
         list_box.insert(END, task)
 
+
+def deleteTask():
+    global list_box
+    task = str(list_box.get(ANCHOR))
+    if task in task_list:
+        task_list.remove(task)
+        with open("tasklist.txt","w" )as taskfile:
+            for task in task_list:
+                taskfile.write(f"{task}\n")
+        list_box.delete(ANCHOR)
 def openTaskFile():
     try:
         global task_list
@@ -77,7 +87,7 @@ scrollbar.config(command=list_box.yview)
 
 # delete
 delete_icon = PhotoImage(file="images/delete.png")
-Button(root, image=delete_icon, bd=0,).pack(side=BOTTOM)
+Button(root, image=delete_icon, bd=0, command=deleteTask).pack(side=BOTTOM)
 
 
 root.mainloop()  
