@@ -11,4 +11,9 @@ task_list = []
 # Icon
 image_icon = PhotoImage(file="images/task.png")
 root.iconphoto(False, image_icon)
+
+# top bar
+top_image = PhotoImage(file="images/topbar.png")
+Label(root, image=top_image).pack()
+
 root.mainloop()  
