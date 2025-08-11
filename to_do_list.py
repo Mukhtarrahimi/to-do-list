@@ -50,5 +50,9 @@ scrollbar.pack(side=RIGHT, fill=BOTH)
 list_box.config(yscrollcommand=scrollbar.set)
 scrollbar.config(command=list_box.yview)
 
+# delete
+delete_icon = PhotoImage(file="images/delete.png")
+Button(root, image=delete_icon, bd=0,).pack(side=BOTTOM)
+
 
 root.mainloop()  
