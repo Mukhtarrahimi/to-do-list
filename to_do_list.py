@@ -21,7 +21,7 @@ Label(root, image=dock_image).place(x=30, y=25)
 
 note_image = PhotoImage(file="images/task.png")
 Label(root, image=note_image).place(x=340, y=25)
- 
+
 heading = Label(root, text="ALL TASK", font="arial 20 bold", fg="white", bg="#32405b")
 heading.place(x=130, y=20)
 
@@ -44,6 +44,11 @@ frame1.pack(pady=(160, 0))
 list_box = Listbox(frame1, font=("arial", 12), width=40, height=16, bg="#32405b", fg="white", cursor="hand2", selectbackground="5a95ff")
 list_box.pack(side=LEFT, fill=BOTH, padx=2)
 
+scrollbar = Scrollbar(frame1)
+scrollbar.pack(side=RIGHT, fill=BOTH)
+
+list_box.config(yscrollcommand=scrollbar.set)
+scrollbar.config(command=list_box.yview)
 
 
 root.mainloop()  
