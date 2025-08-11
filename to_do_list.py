@@ -6,4 +6,9 @@ root.title("To-Do-List")
 root.geometry("400x650+400+100")
 root.resizable(False, False)
 
-root.mainloop()
+task_list = []
+
+# Icon
+image_icon = PhotoImage(file="images/task.png")
+root.iconphoto(False, image_icon)
+root.mainloop()  
