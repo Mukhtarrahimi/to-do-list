@@ -20,6 +20,8 @@ dock_image = PhotoImage(file="images/dock.png")
 Label(root, image=dock_image).place(x=30, y=25)
 
 note_image = PhotoImage(file="images/task.png")
-Label(root, image=note_image).place(x=30, y=25)
-
+Label(root, image=note_image).place(x=340, y=25)
+ 
+heading = Label(root, text="ALL TASK", font="arial 20 bold", fg="white", bg="#32405b")
+heading.place(x=130, y=20)
 root.mainloop()  
